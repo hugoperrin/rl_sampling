@@ -1,0 +1,66 @@
+[tool.poetry]
+name = "rl_sampling"
+version = "0.1.0"
+description = "Reinforcement learning adaptive sampling"
+authors = ["Hugo Perrin (hugo1344.perrin@gmail.com)"]
+packages = [
+    { include = "rl_sampling" },
+]
+
+
+[tool.poetry.dependencies]
+########
+# Misc #
+########
+
+python = "^3.7.5"
+
+#################
+# Deep learning #
+#################
+
+torch = "^1.8"
+
+
+##########
+# vision #
+##########
+
+pyexr = "^0.3.9"
+pytorch-lightning = "^1.2.10"
+
+
+
+[tool.poetry.dev-dependencies]
+bandit = "^1.6.2"           # security practices                    https://github.com/PyCQA/bandit
+behave = "^1.2.6"           # bdd tests                             https://github.com/behave/behave
+black = "19.10b0"          # automatic linter                      https://github.com/psf/black
+coverage = "^5.0.3"         # unit and bdd tests code coverage
+dlint = "^0.9.2"            # best coding practices for secure code https://github.com/duo-labs/dlint
+flake8 = "^3.7.9"           # utility tool                          https://gitlab.com/pycqa/flake8
+flake8-black = "^0.1.1"     # ensure black has been ran
+flake8-builtins = "^1.4.1"  # check for python builtins being used as variables or parameters.
+flake8-commas = "^2.0.0"    # enforces trailing commas
+flake8-docstrings = "^1.5.0"# validates docstrings                  https://pypi.org/project/flake8-docstrings/
+flake8-eradicate = "^0.2.3" # checks for dead code
+flake8-fixme = "^1.1.1"     # fix-me and todos
+flake8-isort = "^2.9.0"
+flake8-print = "^3.1.4"     # print usage, logger should be used
+flake8_polyfill = "^1.0.2"
+isort = {version="4.*", extras=["pyproject"]}               # sort imports                          https://github.com/timothycrosley/isort
+mypy = "*"             # static type checker                   https://github.com/python/mypy
+pre-commit = "^1.20.0"      # python -m pre_commit install          https://pre-commit.com/
+pylint = "^2.4.4"           # code analysis                         https://www.pylint.org/
+pytest = "^5.3.5"           # unit tests                            https://docs.pytest.org/en/latest/
+pytest-asyncio = "^0.10.0"  # async unit tests
+pytest-cov = "^2.8.1"       # unit tests coverage
+python-dotenv = "^0.10.5"
+radon = "^4.0.0"            # various code metrics                   https://github.com/rubik/radon
+safety = "^1.8.5"           # check for package vulnerabilities     https://github.com/pyupio/safety
+scikit-build = "^0.10.0"
+rope = "^0.16.0"
+
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
