@@ -5,4 +5,4 @@ flake8:
 	python -m flake8 --exclude=tests/bdd/features/steps,rl_sampling/externals rl_sampling tests
 
 testing:
-	echo "Unit tests soon coming"
+	bash ./scripts/tests/coverage.sh
