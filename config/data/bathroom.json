@@ -1,0 +1,21 @@
+{
+    "render_targets": {
+        "low_spp": {
+            "8": 4,
+            "16": 16,
+            "32": 16,
+            "64": 16,
+            "128": 8,
+            "256": 8,
+            "512": 4,
+            "1024": 2,
+            "2024": 1
+        },
+        "reference": {
+            "32768": 2,
+            "65536": 1
+        }
+    },
+    "folder_out": "data/bathroom/",
+    "scene_path": "scenes/bathroom/scene.xml"
+}

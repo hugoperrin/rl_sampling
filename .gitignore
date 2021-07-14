@@ -1,6 +1,7 @@
 # Repo specific ignores
-data/
-models/
+/data
+/models
+/scenes
 
 .vscode/
 
