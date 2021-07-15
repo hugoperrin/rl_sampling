@@ -1,18 +1,16 @@
 """Data preparation CLI file."""
 import os
 from typing import Dict, List, Optional
-import numpy as np
 
 import fire
+import numpy as np
 import pyexr
 from loguru import logger
-from tqdm import tqdm
-
 from mitsuba_client.client.renderer_enum import RendererEnum
 from mitsuba_client.client.rendering_env import RendererEnv
+from tqdm import tqdm
 
 from rl_sampling.utils.json_utils import load_json
-
 
 default_scene_folder: str = os.getenv("DEFAULT_SCENE_FOLDER", os.path.join("scenes"))
 
