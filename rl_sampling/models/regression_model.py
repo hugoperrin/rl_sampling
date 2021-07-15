@@ -1,11 +1,12 @@
 """Abstract class for regression models."""
 
 from typing import Any
-import torch
 
+import torch
 from torchmetrics.regression.mean_absolute_error import MeanAbsoluteError
-from torchmetrics.regression.ssim import SSIM
 from torchmetrics.regression.mean_squared_error import MeanSquaredError
+from torchmetrics.regression.ssim import SSIM
+
 from rl_sampling.models.base_model import BaseModel
 
 

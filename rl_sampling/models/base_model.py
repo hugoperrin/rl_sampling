@@ -1,13 +1,13 @@
 """Abstract class for general models."""
 
-from _typeshed import NoneType
 from abc import abstractclassmethod
 from typing import Any, Dict, Optional, Tuple
+
+import torch
+from loguru import logger
 from pytorch_lightning import LightningModule
 
-from loguru import logger
-import torch
-
+from _typeshed import NoneType
 from rl_sampling.utils.types import TensorLike
 
 
@@ -51,17 +51,12 @@ class BaseModel(LightningModule):
 
         inputs: TensorLike
         targets: TensorLike
-        inputs, targets = self.extract_batch_data(
-            batch=batch, batch_idx=batch_idx,
-        )
+        inputs, targets = self.extract_batch_data(batch=batch, batch_idx=batch_idx,)
         predictions: TensorLike = self.get_predictions(
             inputs=inputs, mode="training",
         )
         loss = self.get_loss_value(
-            inputs=inputs,
-            targets=targets,
-            predictions=predictions,
-            mode="training",
+            inputs=inputs, targets=targets, predictions=predictions, mode="training",
         )
         self.logging_metrics(
             inputs=inputs,
@@ -72,7 +67,9 @@ class BaseModel(LightningModule):
         )
         return {"loss": loss}
 
-    def extract_batch_data(self, batch: TensorLike, batch_idx: int) -> Tuple[TensorLike, TensorLike]:
+    def extract_batch_data(
+        self, batch: TensorLike, batch_idx: int
+    ) -> Tuple[TensorLike, TensorLike]:
         inputs, targets = batch
         return inputs, targets
 
@@ -113,11 +110,7 @@ class BaseModel(LightningModule):
 
     def training_epoch_end(self, training_step_outputs):
         self.logging_metrics(
-            inputs=None,
-            targets=None,
-            predictions=None,
-            mode="training",
-            is_step=False,
+            inputs=None, targets=None, predictions=None, mode="training", is_step=False,
         )
 
     def validation_epoch_end(self, training_step_outputs):
